@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AndroidX Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">AndroidX</div>
+    <div class="menu-toggle">☰</div>
+    <nav>
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('products')">Products</a>
+        <a onclick="showSection('cart')">Cart</a>
+        <a onclick="showSection('payment')">Payment</a>
+    </nav>
+</header>
+
+<!-- ================= HOME ================= -->
+<section id="home" class="page active">
+    <div class="hero">
+        <div>
+            <h1>Future of Android Phones</h1>
+            <p>Premium Quality. Smart Prices.</p>
+            <button onclick="showSection('products')">Shop Now</button>
+        </div>
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+    </div>
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+<section id="products" class="page">
+    <h2 style="text-align:center;margin-top:20px;">Our Phones</h2>
+
+    <div class="product-grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+            <h3>AndroidX Pro</h3>
+            <p>₹29999</p>
+            <button onclick="addToCart('AndroidX Pro',29999)">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35c7">
+            <h3>AndroidX Ultra</h3>
+            <p>₹39999</p>
+            <button onclick="addToCart('AndroidX Ultra',39999)">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1495433324511-bf8e92934d90">
+            <h3>AndroidX Lite</h3>
+            <p>₹19999</p>
+            <button onclick="addToCart('AndroidX Lite',19999)">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CART ================= -->
+<section id="cart" class="page">
+    <div class="cart-container">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <h3>Total: ₹<span id="total">0</span></h3>
+        <button onclick="showSection('payment')">Proceed to Payment</button>
+    </div>
+</section>
+
+<!-- ================= PAYMENT ================= -->
+<section id="payment" class="page">
+    <h2 style="text-align:center;margin-top:20px;">Secure Payment</h2>
+
+    <form class="payment-form" onsubmit="paymentSuccess(event)">
+        <input type="text" placeholder="Card Holder Name" required>
+        <input type="text" placeholder="Card Number" required>
+        <input type="text" placeholder="Expiry Date (MM/YY)" required>
+        <input type="text" placeholder="CVV" required>
+        <button type="submit">Pay Now</button>
+    </form>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
